@@ -6,12 +6,13 @@ import {MatChipsModule} from '@angular/material/chips';
 import { Musico } from '../models/musico.interface';
 import { Cancion } from '../models/canciones.interface';
 import {MatRippleModule} from '@angular/material/core';
-import { canciones as cancionesData, canciones, musicos } from '../../assets/data'; 
+import { canciones as cancionesData, musicos } from '../../assets/data'; 
 import { GeneralConstant } from '../../assets/general-constants';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-canciones',
@@ -20,51 +21,56 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular
   styleUrl: './canciones.component.scss',
   imports: [MatCardModule, MatChipsModule, MatProgressBarModule, MatRippleModule,
             MatGridListModule, MatCheckboxModule, FormsModule, ReactiveFormsModule,
+            CommonModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CancionesComponent implements OnInit {
 
-  musicosPresentes: Musico[] = [];
-  canciones: Cancion[] = cancionesData;
-  voces : Musico [] = musicos.filter(musico => musico.tipoMusico.instrumento === GeneralConstant.TipoMusicoConstant.VOZ);
-  instrumentos = musicos.filter(musico =>
-    GeneralConstant.TipoMusicoConstant.INSTRUMENTO.some(instrumento => instrumento.nombre === musico.tipoMusico.instrumento)
-  );
+  private musicosPresentes: number[] = [];
+  protected canciones: Cancion[] = cancionesData;
+  protected voces : Musico [] = musicos.filter(musico => musico.tipoMusico.instrumento === GeneralConstant.TipoMusicoConstant.VOZ);
+  protected instrumentos : Musico[] = musicos.filter(musico => musico.tipoMusico.instrumento !== GeneralConstant.TipoMusicoConstant.VOZ);
 
   onCheckboxChange(musico : Musico): void {
-    musico.presente = !musico.presente;
-    if(musico.presente){
-      this.musicosPresentes.push(musico);
+    if (musico.presente) {
+        this.musicosPresentes.push(musico.id);
     } else {
-      this.musicosPresentes = this.musicosPresentes.filter(musicoPresente => musicoPresente.nombre !== musico.nombre);
+        const index = this.musicosPresentes.indexOf(musico.id);
+        if (index > -1) {
+            this.musicosPresentes.splice(index, 1);
+        }
     }
-
     this.actualizarMusicosPresentes();
-    console.log(this.canciones);
-    console.log(this.musicosPresentes);
-
+    this.ordenarCancionesPorMusicosPresentes();
   }
+
+  ordenarCancionesPorMusicosPresentes(): void {
+    this.canciones.sort((a, b) => {
+      const aPresente = a.musicos.some(musico => musico.presente);
+      const bPresente = b.musicos.some(musico => musico.presente);
+  
+      if (aPresente && !bPresente) {
+        return -1;
+      }
+      if (!aPresente && bPresente) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  
 
   actualizarMusicosPresentes(): void {
     this.canciones.forEach(cancion => {
       cancion.musicos.forEach(musico => {
-        musico.presente = this.musicosPresentes.includes(musico);
+        musico.presente = this.musicosPresentes.includes(musico.id);
       });
     });
   }
 
-
-
   ngOnInit(): void {
 
   }
-
-  longText = `The Chihuahua is a Mexican breed of toy dog. It is named for the
-  Mexican state of Chihuahua and is among the smallest of all dog breeds. It is
-  usually kept as a companion animal or for showing.`;
-
-
-
 
 }
