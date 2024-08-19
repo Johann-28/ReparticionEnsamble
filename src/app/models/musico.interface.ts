@@ -1,5 +1,8 @@
+import { TipoMusico } from "./tipo-musico.interface";
+
 export interface Musico {
     id: number;
     nombre: string;
-    tipoMusicoId: number;
+    tipoMusico : TipoMusico;
+    presente? : boolean;
   }

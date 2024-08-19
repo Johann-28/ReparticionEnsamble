@@ -1,22 +1,61 @@
-@for (cancion of canciones; track $index) {
-
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>{{cancion.titulo}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>{{longText}}</p>
-  </mat-card-content>
-  <mat-card-footer class="example-card-footer">
-    <mat-chip-set aria-label="Chihuahua traits">
-      <mat-chip>charming</mat-chip>
-      <mat-chip>graceful</mat-chip>
-      <mat-chip>sassy</mat-chip>
-    </mat-chip-set>
-  </mat-card-footer>
-</mat-card>
-
-
-
-
-}
+<mat-grid-list cols="8" rowHeight="100%">
+  <mat-grid-tile [colspan]="3">
+    <section >
+      <div class="asistencia-container">
+        <div class="asistencia-scrollable-content">
+          <div class="voces">
+            <h1>Voces</h1>
+            @for(voz of voces; track $index) {
+              <p><mat-checkbox [(ngModel)]="voz.presente" (ngModelChange)="onCheckboxChange(voz)">{{voz.nombre}}</mat-checkbox></p>
+            }
+          </div>
+  
+          <div class="instrumentos">
+            <h1>Instrumentos</h1>
+            @for(instrumento of instrumentos; track $index) {
+              <p><mat-checkbox >{{instrumento.nombre}}</mat-checkbox></p>
+            }
+          </div>
+        </div>
+    
+        
+      </div>
+    </section>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="5">
+    <div class="card-container">
+      <div class="scrollable-content">
+      @for (cancion of canciones; track $index) {
+        <mat-card matRipple appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>{{cancion.titulo}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="chip-container">
+              <!-- Músicos con tipoMusico.instrumento == "VOZ" -->
+              <div class="voz-container">
+                VOCES
+                @for (musico of cancion.musicos; track $index) {
+                  @if (musico.tipoMusico.instrumento == "VOZ") {
+                    <mat-chip class="joto">{{musico.nombre}}</mat-chip>
+                  }
+                }
+              </div>
+              <!-- Músicos con otros instrumentos -->
+              <div class="otros-container">
+                INSTRUMENTOS
+                @for (musico of cancion.musicos; track $index) {
+                  @if (musico.tipoMusico.instrumento != "VOZ") {
+                    <mat-chip>{{musico.nombre}}</mat-chip>
+                  }
+                }
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+    </div>
+  </mat-grid-tile>
+ 
+</mat-grid-list>
