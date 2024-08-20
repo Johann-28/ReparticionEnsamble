@@ -43,20 +43,15 @@ export class CancionesComponent implements OnInit {
     }
     this.actualizarMusicosPresentes();
     this.ordenarCancionesPorMusicosPresentes();
+    
   }
 
   ordenarCancionesPorMusicosPresentes(): void {
     this.canciones.sort((a, b) => {
-      const aPresente = a.musicos.some(musico => musico.presente);
-      const bPresente = b.musicos.some(musico => musico.presente);
+      const aPresenteCount = a.musicos.filter(musico => musico.presente).length;
+      const bPresenteCount = b.musicos.filter(musico => musico.presente).length;
   
-      if (aPresente && !bPresente) {
-        return -1;
-      }
-      if (!aPresente && bPresente) {
-        return 1;
-      }
-      return 0;
+      return bPresenteCount - aPresenteCount;
     });
   }
   
