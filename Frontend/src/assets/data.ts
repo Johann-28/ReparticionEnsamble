@@ -583,9 +583,85 @@ export const canciones = [
                 id: 16,
                 nombre: "YARED",
                 tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
+            }   
         ]
-    }
+    },
+    {
+        id: 23,
+        titulo: "Baila Mi Corazón",
+        musicos: [
+          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 22, nombre: "BRIANA", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 14, nombre: "NOX", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 12, nombre: "AIMEE", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      },
+      {
+        id: 24,
+        titulo: "Mucha Lucha",
+        musicos: [
+          { id: 9, nombre: "EDUARDO", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 23, nombre: "ARTURO", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 2, nombre: "CHUY", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 6, nombre: "GABRIEL", tipoMusico: { id: 4, instrumento: "TPR" } },
+          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 5, nombre: "ELPIDIO", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      },
+      {
+        id: 25,
+        titulo: "Espiral",
+        musicos: [
+          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 23, nombre: "ARTURO", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 22, nombre: "BRIANA", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 8, nombre: "ERIK", tipoMusico: { id: 5, instrumento: "TCL" } },
+          { id: 24, nombre: "GABRIEL", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      },
+      {
+        id: 26,
+        titulo: "La Negra Tomasa",
+        musicos: [
+          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 10, nombre: "DIEGO", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 11, nombre: "VIKI", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      },
+      {
+        id: 27,
+        titulo: "Eres",
+        musicos: [
+          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 14, nombre: "NOX", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 10, nombre: "DIEGO", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 2, nombre: "CHUY", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 24, nombre: "GABRIEL", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      },
+      {
+        id: 28,
+        titulo: "Cumbia de la Cobra",
+        musicos: [
+          { id: 2, nombre: "CHUY", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 20, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
+          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
+          { id: 11, nombre: "VIKI", tipoMusico: { id: 3, instrumento: "BTR" } },
+          { id: 6, nombre: "GABRIEL", tipoMusico: { id: 7, instrumento: "SAX" } },
+          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } },
+          { id: 13, nombre: "EMILY", tipoMusico: { id: 6, instrumento: "VOZ" } }
+        ]
+      }
 ]
 ;
 
@@ -698,6 +774,48 @@ export const musicos = [
     tipoMusico: { id: 6, instrumento: 'VOZ' },
     presente: false,
   },
+  {
+    id: 19,
+    nombre: "MAX OVI",
+    tipoMusico: { id: 1, instrumento: "GTR" },
+    presente: false
+  },
+  {
+    id: 20,
+    nombre: "MAX",
+    tipoMusico: { id: 6, instrumento: "VOZ" },
+    presente: false
+  },
+  {
+    id: 21,
+    nombre: "ALEXIS",
+    tipoMusico: { id: 1, instrumento: "GTR" },
+    presente: false
+  },
+  {
+    id: 22,
+    nombre: "BRIANA",
+    tipoMusico: { id: 3, instrumento: "BTR" },
+    presente: false
+  },
+  {
+    id: 23,
+    nombre: "ARTURO",
+    tipoMusico: { id: 1, instrumento: "GTR" },
+    presente: false
+  },
+  {
+    id: 24,
+    nombre: "GABRIEL",
+    tipoMusico: { id: 6, instrumento: "VOZ" },
+    presente: false
+  },
+  {
+    id: 25,
+    nombre: "RICARDO",
+    tipoMusico: { id: 6, instrumento: "VOZ" },
+    presente: false
+  }
 ];
 
 
@@ -708,4 +826,5 @@ export const tipoMusicos = [
     {id: 4, nombre: "TRP"},
     {id: 5, nombre: "TCL"},
     {id: 6, nombre: "VOZ"},
+    {if: 7, nombre: "VLN"}
 ];
