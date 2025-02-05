@@ -6,7 +6,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import { Musico } from '../models/musico.interface';
 import { Cancion } from '../models/canciones.interface';
 import {MatRippleModule} from '@angular/material/core';
-import { canciones as cancionesData, musicos } from '../../assets/data'; 
+import { canciones as cancionesData, musicos, canciones } from '../../assets/data'; 
 import { GeneralConstant } from '../../assets/general-constants';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -37,8 +37,8 @@ export class CancionesComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   private musicosPresentes: number[] = [];
   protected canciones: Cancion[] = cancionesData;
-  protected voces : Musico [] = musicos.filter(musico => musico.tipoMusico.instrumento === GeneralConstant.TipoMusicoConstant.VOZ);
-  protected instrumentos : Musico[] = musicos.filter(musico => musico.tipoMusico.instrumento !== GeneralConstant.TipoMusicoConstant.VOZ);
+  protected voces : Musico [] = musicos.filter(musico => musico.tipoMusico.categoria === GeneralConstant.CLAVEVOZ);
+  protected instrumentos : Musico[] = musicos.filter(musico => musico.tipoMusico.categoria === GeneralConstant.CLAVEINSTRUMENTO);
 
   
 
@@ -67,7 +67,6 @@ export class CancionesComponent implements OnInit {
   }
 
   editar(cancion : Cancion){
-    console.log(cancion);
   }
 
   ordenarCancionesPorSeleccionadas(): void {
