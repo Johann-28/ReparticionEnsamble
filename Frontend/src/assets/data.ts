@@ -1,871 +1,94 @@
-import { Cancion } from "../app/models/canciones.interface";
-import { Musico } from "../app/models/musico.interface";
+export const tipoMusicos = [
+    { id: 1, instrumento: "GTR", categoria: "instrumento" },
+    { id: 2, instrumento: "RHYTHM", categoria: "instrumento" },
+    { id: 3, instrumento: "BASS", categoria: "instrumento" },
+    { id: 4, instrumento: "BTR", categoria: "instrumento" },
+    { id: 5, instrumento: "CPU", categoria: "instrumento" },
+    { id: 6, instrumento: "TCL", categoria: "instrumento" },
+    { id: 7, instrumento: "1era", categoria: "voz" },
+    { id: 8, instrumento: "2da", categoria: "voz" },
+    { id: 9, instrumento: "Coro", categoria: "voz" }
+];
 
-export const canciones : Cancion[] = [
+export const musicos = [
+    { id: 1, nombre: "LALO", tipoMusico: tipoMusicos[0], presente: false },
+    { id: 2, nombre: "MAX", tipoMusico: tipoMusicos[0], presente: false },
+    { id: 3, nombre: "CRUZ", tipoMusico: tipoMusicos[1], presente: false },
+    { id: 4, nombre: "HASELL", tipoMusico: tipoMusicos[2], presente: false },
+    { id: 5, nombre: "BRIANNA", tipoMusico: tipoMusicos[3], presente: false },
+    { id: 6, nombre: "ELPIDIO", tipoMusico: tipoMusicos[4], presente: false },
+    { id: 7, nombre: "CPU", tipoMusico: tipoMusicos[5], presente: false },
+    { id: 8, nombre: "RICARDO", tipoMusico: tipoMusicos[6], presente: false },
+    { id: 9, nombre: "YARED", tipoMusico: tipoMusicos[6], presente: false },
+    { id: 10, nombre: "AIMEE", tipoMusico: tipoMusicos[8], presente: false },
+    { id: 11, nombre: "EMILY", tipoMusico: tipoMusicos[7], presente: false }
+];
+
+export const canciones = [
     {
         id: 1,
-        titulo: "La Bikina",
+        titulo: "IRIS",
         seleccionada: false,
-        musicos: [
-            {
-                id: 1,
-                nombre: "JESUS C",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 6,
-                nombre: "GABRIEL",
-                tipoMusico: { id: 4, instrumento: "TRP" }
-            },
-            {
-                id: 12,
-                nombre: "AIME",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 16,
-                nombre: "YARED",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            //anade a johann como voz
-            {
-                id: 18,
-                nombre: "JOHANN",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-
-
-        ]
+        musicos: [musicos[0], musicos[1], musicos[3], musicos[4], musicos[7]]
     },
     {
         id: 2,
-        titulo: "Lo que Construimos",
+        titulo: "When You Where Young",
         seleccionada: false,
-        musicos: [
-            {
-                id: 1,
-                nombre: "JESUS C",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 7,
-                nombre: "JOHANN",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 15,
-                nombre: "MEL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
+        musicos: [musicos[1], musicos[0], musicos[3], musicos[5], musicos[7], musicos[8], musicos[10]]
     },
     {
         id: 3,
-        titulo: "TQM",
+        titulo: "Selfless",
         seleccionada: false,
-        musicos: [
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 13,
-                nombre: "EMILY",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 16,
-                nombre: "YARED",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 15,
-                nombre: "MEL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
+        musicos: [musicos[0], musicos[2], musicos[3], musicos[4], musicos[8]]
+    },
+    {
+        id: 4,
+        titulo: "Shut Up and Dance",
+        seleccionada: false,
+        musicos: [musicos[0], musicos[2], musicos[3], musicos[5], musicos[10], musicos[8], musicos[9]]
+    },
+    {
+        id: 5,
+        titulo: "Careless Whisper",
+        seleccionada: false,
+        musicos: [musicos[2], musicos[3], musicos[4], musicos[6], musicos[10], musicos[9]]
     },
     {
         id: 6,
-        titulo: "Cada Que",
+        titulo: "Die With a Smile",
         seleccionada: false,
-        musicos: [
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 13,
-                nombre: "EMILY",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 14,
-                nombre: "NOX",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-            
-
-        ]
+        musicos: [musicos[1], musicos[2], musicos[3], musicos[5], musicos[10], musicos[9], musicos[7]]
     },
     {
         id: 7,
-        titulo: "No Te Contaron Mal",
+        titulo: "Moderato - Amor Prohibido",
         seleccionada: false,
-        musicos: [
-            {
-                id: 7,
-                nombre: "JOHANN",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 1,
-                nombre: "JESUS C",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 17,
-                nombre: "HASSELL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 12,
-                nombre: "AIMEE",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
+        musicos: [musicos[0], musicos[2], musicos[3], musicos[5], musicos[7], musicos[8]]
     },
     {
         id: 8,
-        titulo: "Fuerte No Soy",
+        titulo: "Emmanuel Cortes - Amor",
         seleccionada: false,
-        musicos: [
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 7,
-                nombre: "JOHANN",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 15,
-                nombre: "MEL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 12,
-                nombre: "AIMEE",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
+        musicos: [musicos[1], musicos[0], musicos[3], musicos[5], musicos[9]]
     },
     {
         id: 9,
-        titulo: "Hasta La Raíz",
+        titulo: "Can’t Help Falling in Love",
         seleccionada: false,
-        musicos: [
-            {
-                id: 7,
-                nombre: "JOHANN",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 10,
-                nombre: "DIEGO",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 13,
-                nombre: "EMILY",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 12,
-                nombre: "AIMEE",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
+        musicos: [musicos[2], musicos[1], musicos[3], musicos[4], musicos[8], musicos[9], musicos[10]]
     },
     {
         id: 10,
-        titulo: "La Media Vuelta",
+        titulo: "Un Siglo Sin Ti",
         seleccionada: false,
-        musicos: [
-            {
-                id: 7,
-                nombre: "JOHANN",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 10,
-                nombre: "DIEGO",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 6,
-                nombre: "GABRIEL",
-                tipoMusico: { id: 4, instrumento: "TRP" }
-            },
-            //anade a aime y a nox como voz
-            {
-                id: 12,
-                nombre: "AIMEE",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 14,
-                nombre: "NOX",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-
-
-            
-        ]
+        musicos: [musicos[0], musicos[2], musicos[3], musicos[4], musicos[5], musicos[9], musicos[10]]
     },
     {
         id: 11,
-        titulo: "La Carcacha",
+        titulo: "Enamorado Tuyo",
         seleccionada: false,
-        musicos: [
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 15,
-                nombre: "MEL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 14,
-                nombre: "NOX",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
-    },
-    {
-        id: 12,
-        titulo: "Belleza de Cantina",
-        seleccionada: false,
-        musicos: [
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 1,
-                nombre: "JESUS C",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 10,
-                nombre: "DIEGO",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 16,
-                nombre: "YARED",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 17,
-                nombre: "HASSELL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
-    },
-    {
-        id: 13,
-        titulo: "El Chico Del Apartamento 512",
-        seleccionada: false,
-        musicos: [
-            {
-                id: 5,
-                nombre: "ELPIDIO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 15,
-                nombre: "MEL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 13,
-                nombre: "EMILY",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 12,
-                nombre: "AIMEE",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
-    },
-    {
-        id: 14,
-        titulo: "Di Que Si",
-        seleccionada: false,
-        musicos: [
-            {
-                id: 1,
-                nombre: "JESUS C",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 14,
-                nombre: "NOX",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 16,
-                nombre: "YARED",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 17,
-                nombre: "HASSELL",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }
-        ]
-    },
-    {
-        id: 15,
-        titulo: "No Rompas Mi Corazón",
-        seleccionada: false,
-        musicos: [
-            {
-                id: 2,
-                nombre: "CHUY",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 9,
-                nombre: "EDUARDO",
-                tipoMusico: { id: 1, instrumento: "GTR" }
-            },
-            {
-                id: 3,
-                nombre: "HASELL",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 4,
-                nombre: "EDGAR",
-                tipoMusico: { id: 2, instrumento: "BSS" }
-            },
-            {
-                id: 11,
-                nombre: "VIKI",
-                tipoMusico: { id: 3, instrumento: "BTR" }
-            },
-            {
-                id: 8,
-                nombre: "ERIK",
-                tipoMusico: { id: 5, instrumento: "TCL" }
-            },
-            {
-                id: 13,
-                nombre: "EMILY",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            },
-            {
-                id: 16,
-                nombre: "YARED",
-                tipoMusico: { id: 6, instrumento: "VOZ" }
-            }   
-        ]
-    },
-    {
-        id: 23,
-        titulo: "Baila Mi Corazón",
-        seleccionada: false,
-        musicos: [
-          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 22, nombre: "BRIANA", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 14, nombre: "NOX", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 12, nombre: "AIMEE", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 24,
-        titulo: "Mucha Lucha",
-        seleccionada: false,
-        musicos: [
-          { id: 9, nombre: "EDUARDO", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 23, nombre: "ARTURO", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 2, nombre: "CHUY", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 6, nombre: "GABRIEL", tipoMusico: { id: 4, instrumento: "TPR" } },
-          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 5, nombre: "ELPIDIO", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 25,
-        titulo: "Espiral",
-        seleccionada: false,
-        musicos: [
-          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 23, nombre: "ARTURO", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 22, nombre: "BRIANA", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 8, nombre: "ERIK", tipoMusico: { id: 5, instrumento: "TCL" } },
-          { id: 24, nombre: "GABRIEL", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 20, nombre: "MAX", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 26,
-        titulo: "La Negra Tomasa",
-        seleccionada: false,
-        musicos: [
-          { id: 19, nombre: "MAX OVI", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 10, nombre: "DIEGO", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 11, nombre: "VIKI", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 27,
-        titulo: "Eres",
-        seleccionada: false,
-        musicos: [
-          { id: 21, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 14, nombre: "NOX", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 10, nombre: "DIEGO", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 2, nombre: "CHUY", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 24, nombre: "GABRIEL", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 28,
-        titulo: "Cumbia de la Cobra",
-        seleccionada: false,
-        musicos: [
-          { id: 2, nombre: "CHUY", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 20, nombre: "ALEXIS", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 3, nombre: "HASELL", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 11, nombre: "VIKI", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 6, nombre: "GABRIEL", tipoMusico: { id: 7, instrumento: "SAX" } },
-          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 13, nombre: "EMILY", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 29,
-        titulo: "One, Two, Thre, GO!",
-        seleccionada: false,
-        musicos: [
-          { id: 2, nombre: "CHUY", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 9, nombre: "EDUARDO", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 4, nombre: "EDGAR", tipoMusico: { id: 2, instrumento: "BSS" } },
-          { id: 5, nombre: "ELPIDIO", tipoMusico: { id: 3, instrumento: "BTR" } },
-          { id: 25, nombre: "RICARDO", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 8, nombre: "ERIK", tipoMusico: { id: 5, instrumento: "TCL" } },
-          { id: 13, nombre: "EMILY", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 14, nombre: "NOX", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 12, nombre: "AIMEE", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      },
-      {
-        id: 30,
-        titulo: "No te contaron mal",
-        seleccionada: false,
-        musicos: [
-          { id: 7, nombre: "JOHANN", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 1, nombre: "JESUS C", tipoMusico: { id: 1, instrumento: "GTR" } },
-          { id: 4, nombre: "EDGAR", tipoMusico: { id: 2, instrumento: "BS" } },
-          { id: 8, nombre: "ERIK", tipoMusico: { id: 5, instrumento: "TCL" } },
-          { id: 17, nombre: "HASSELL", tipoMusico: { id: 6, instrumento: "VOZ" } },
-          { id: 12, nombre: "AIMEE", tipoMusico: { id: 6, instrumento: "VOZ" } }
-        ]
-      }
-]
-;
-
-export const musicos : Musico[] = [
-  {
-    id: 1,
-    nombre: 'JESUS C',
-    tipoMusico: { id: 1, instrumento: 'GTR' },
-    presente: false,
-  },
-  {
-    id: 2,
-    nombre: 'CHUY',
-    tipoMusico: { id: 1, instrumento: 'GTR' },
-    presente: false,
-  },
-  {
-    id: 3,
-    nombre: 'HASELL',
-    tipoMusico: { id: 2, instrumento: 'BSS' },
-    presente: false,
-  },
-  {
-    id: 4,
-    nombre: 'EDGAR',
-    tipoMusico: { id: 2, instrumento: 'BSS' },
-    presente: false,
-  },
-  {
-    id: 5,
-    nombre: 'ELPIDIO',
-    tipoMusico: { id: 3, instrumento: 'BTR' },
-    presente: false,
-  },
-  {
-    id: 6,
-    nombre: 'GABRIEL',
-    tipoMusico: { id: 4, instrumento: 'TRP' },
-    presente: false,
-  },
-  {
-    id: 7,
-    nombre: 'JOHANN',
-    tipoMusico: { id: 1, instrumento: 'GTR' },
-    presente: false,
-  },
-  {
-    id: 8,
-    nombre: 'ERIK',
-    tipoMusico: { id: 5, instrumento: 'TCL' },
-    presente: false,
-  },
-  {
-    id: 9,
-    nombre: 'EDUARDO',
-    tipoMusico: { id: 1, instrumento: 'GTR' },
-    presente: false,
-  },
-  {
-    id: 10,
-    nombre: 'DIEGO',
-    tipoMusico: { id: 2, instrumento: 'BSS' },
-    presente: false,
-  },
-  {
-    id: 11,
-    nombre: 'VIKI',
-    tipoMusico: { id: 3, instrumento: 'BTR' },
-    presente: false,
-  },
-  {
-    id: 12,
-    nombre: 'AIMEE',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 13,
-    nombre: 'EMILY',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 14,
-    nombre: 'NOX',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 15,
-    nombre: 'MEL',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 16,
-    nombre: 'YARED',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 17,
-    nombre: 'HASSELL',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 18,
-    nombre: 'JOHANN',
-    tipoMusico: { id: 6, instrumento: 'VOZ' },
-    presente: false,
-  },
-  {
-    id: 19,
-    nombre: "MAX OVI",
-    tipoMusico: { id: 1, instrumento: "GTR" },
-    presente: false
-  },
-  {
-    id: 20,
-    nombre: "MAX",
-    tipoMusico: { id: 6, instrumento: "VOZ" },
-    presente: false
-  },
-  {
-    id: 21,
-    nombre: "ALEXIS",
-    tipoMusico: { id: 1, instrumento: "GTR" },
-    presente: false
-  },
-  {
-    id: 22,
-    nombre: "BRIANA",
-    tipoMusico: { id: 3, instrumento: "BTR" },
-    presente: false
-  },
-  {
-    id: 23,
-    nombre: "ARTURO",
-    tipoMusico: { id: 1, instrumento: "GTR" },
-    presente: false
-  },
-  {
-    id: 24,
-    nombre: "GABRIEL",
-    tipoMusico: { id: 6, instrumento: "VOZ" },
-    presente: false
-  },
-  {
-    id: 25,
-    nombre: "RICARDO",
-    tipoMusico: { id: 6, instrumento: "VOZ" },
-    presente: false
-  }
-];
-
-
-export const tipoMusicos = [
-    {id: 1, nombre: "GTR"},
-    {id: 2, nombre: "BSS"},
-    {id: 3, nombre: "BTR"},
-    {id: 4, nombre: "TRP"},
-    {id: 5, nombre: "TCL"},
-    {id: 6, nombre: "VOZ"},
-    {if: 7, nombre: "VLN"}
+        musicos: [musicos[1], musicos[2], musicos[3], musicos[5], musicos[8], musicos[10]]
+    }
 ];
