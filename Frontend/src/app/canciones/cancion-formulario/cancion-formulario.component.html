@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{cancion.titulo}}</h1>
+<mat-dialog-content>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      @for(musico of cancion.musicos ; track $index){
+      {{ musico.nombre }} - {{ musico.tipoMusico.instrumento}} - {{ musico.presente ? 'Presente' : 'No presente'}} <br>
+      }
+    </mat-grid-tile>
+    <mat-grid-tile class="musicos-disponibles">
+      @for(musicosInstrumento of instrumentosMusicos ; track $index){
+        {{ musicosInstrumento.instrumento }}  <br>
+      
+ 
+      @for (musico of musicosInstrumento.musicos; track $index) {
+          {{musico.nombre}} <br>
+        }
+ 
+        }
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button>Ok</button>
+</mat-dialog-actions>
