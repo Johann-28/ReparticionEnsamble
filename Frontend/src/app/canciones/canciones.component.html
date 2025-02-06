@@ -47,7 +47,7 @@
                 INSTRUMENTOS
                 @for (musico of cancion.musicos; track $index) 
                 {
-                  @if (musico.tipoMusico.instrumento != "VOZ") {
+                  @if (musico.tipoMusico.categoria == "instrumento") {
                       <mat-chip [ngClass]="{'presente': musico.presente}">{{musico.nombre}}</mat-chip>
                   }
                 }
