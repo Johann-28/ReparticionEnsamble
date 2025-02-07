@@ -35,7 +35,7 @@
           <mat-card-content>
             <div class="chip-container">
               <div class="voz-container">
-                VOCES
+                Voces
                 @for (musico of cancion.musicos; track $index) 
                 {
                   @if (musico.tipoMusico.categoria == "voz") {
@@ -44,7 +44,7 @@
                 }
               </div>
               <div class="otros-container">
-                INSTRUMENTOS
+                Instrumentos
                 @for (musico of cancion.musicos; track $index) 
                 {
                   @if (musico.tipoMusico.categoria == "instrumento") {
