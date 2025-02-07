@@ -29,6 +29,6 @@ jobs:
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           branch: prod  # La rama donde se desplegará la aplicación
           folder: Frontend/docs  # La carpeta que contiene los archivos construidos
