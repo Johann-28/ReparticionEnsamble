@@ -1,4 +1,4 @@
-name: Angular build and papu-deploy 
+name: Angular build and deploy
 
 on:
   push:
@@ -18,8 +18,13 @@ jobs:
         with:
           node-version: '20'  
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./Frontend
+
       - name: Build Angular app to prod
-        run: npm install && npm run build:prod
+        run: npm run build:prod
+        working-directory: ./Frontend
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v2
@@ -27,4 +32,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: develop
           BRANCH: prod
-          FOLDER: Frontend/docs/browser
+          FOLDER: Frontend/docs
