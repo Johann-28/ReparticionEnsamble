@@ -107,8 +107,4 @@ export class CancionesComponent implements OnInit {
     const data = { idCancion : cancion.id};
     this.dialog.open(CancionFormularioComponent , {data , height : '800px', width : '800px'});
   }
-
-  
-
-
 }
