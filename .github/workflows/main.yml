@@ -27,9 +27,8 @@ jobs:
         working-directory: ./Frontend
 
       - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
-          BASE_BRANCH: develop
-          BRANCH: prod
-          FOLDER: Frontend/docs
+          token: ${{ secrets.GH_TOKEN }}
+          branch: prod  # La rama donde se desplegará la aplicación
+          folder: Frontend/docs  # La carpeta que contiene los archivos construidos
