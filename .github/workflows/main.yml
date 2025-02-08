@@ -31,4 +31,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch: prod  # La rama donde se desplegará la aplicación
-          folder: Frontend/docs  # La carpeta que contiene los archivos construidos
+          folder: Frontend/docs/browser  # La carpeta que contiene los archivos construidos

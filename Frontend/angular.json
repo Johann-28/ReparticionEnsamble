@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "papu1:build:production"
+              "buildTarget": "reparticionEnsamble:build:production"
             },
             "development": {
-              "buildTarget": "papu2:build:development"
+              "buildTarget": "reparticionEnsamble:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "papu3:build"
+            "buildTarget": "reparticionEnsamble:build"
           }
         },
         "test": {
